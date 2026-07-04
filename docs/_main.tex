@@ -1,0 +1,422 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{book}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+% \usepackage{booktabs}
+
+\usepackage{ctex}
+
+\usepackage{amsthm,mathrsfs}
+\usepackage{booktabs}
+\usepackage{longtable}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={《黄帝内经针灸学》学习笔记},
+  pdfauthor={谢家树博士（香港）},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{《黄帝内经针灸学》学习笔记}
+\author{谢家树博士（香港）}
+\date{2026-07-04}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter*{缘起}\label{ux7f18ux8d77}
+\addcontentsline{toc}{chapter}{缘起}
+
+广州卫生职业技术学院的黃偉萍老师推荐在下参加田大哲先生的 5 天讲座，共 10 小时。讲座第 1 天在 2022 年 11 月 18 日cu。讲座是关于他的书《黄帝内经针灸学》。
+
+黃偉萍老师是在下的老师。
+
+田大哲先生是沧州市执业中医师，是``西北针''郑魁山教授的弟子。2011 年 2 月 1 日，出版《郑魁山针法传心录》一书（ISBN: 9787117139090。人民卫生出版社）。他深入研究《黄帝内经》 20 余载，深谙《黄帝内经》古典针法。2021 年 12 月出版《黄帝内经针灸学》一书（ISBN：9787507763133，出版社：学苑出版社。）
+
+田大哲先生的论文有：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  田大哲，赵泾屹，李乃奇。恢刺探微{[}J{]}。中国针灸，2021，41(01):41-43.DOI:10.13703/j.0255-2930.20191205-k0007。
+\item
+  田大哲，白英哲，李乃奇。Case for non-specific pain on waist of a pregnant woman{[}J{]}. World Journal of Acupuncture-Moxibustion，2019，29(04):322-324。
+\item
+  田大哲，赵泾屹，李乃奇。偶刺发微{[}J{]}。中国针灸，2019，39(10):1115-1116。\url{DOI:10.13703/j.0255-2930.2019.10.023}。
+\item
+  田大哲，李乃奇，翟军。平补平泻论{[}J{]}。中国针灸，2019，39(05):497-500。\url{DOI:10.13703/j.0255-2930.2019.05.010}。
+\item
+  田大哲，赵泾屹，李乃奇。营卫补泻探微{[}J{]}。新中医，2018，50(10):229-231。\url{DOI:10.13457/j.cnki.jncm.2018.10.068}。
+\item
+  田大哲。复兴中医的关键在于还原中医{[}C{]}。2009上海·第三届扶阳论坛暨扶阳学派理论与临床应用培训班论文集，2009:94-96。
+\item
+  田大哲，刘骏驰，赵娟，郑俊江。民族脊梁 针法慈航------记新中国针灸事业的奠基者郑毓琳先生{[}J{]}。中国针灸，2007(07):545-548。
+\item
+  杜广一，田大哲。中西医结合治疗脑梗死168例{[}J{]}。中国民间疗法，2007(03):9-10。\url{DOI:10.19621/j.cnki.11-3555/r.2007.03.008}。
+\item
+  方晓丽，田大哲，李金田，郑俊江。针坛魁斗照河山------记当代中国针灸针法研究之父郑魁山教授{[}J{]}。中国针灸，2007(02):141-146。
+\item
+  鄢丽，田大哲。刘春龙应用小柴胡汤举隅{[}J{]}。中国社区医师(综合版)，2006(09):58-59。
+\item
+  田大哲。肛门内口血泡案{[}J{]}。中国针灸，2006(01):26。
+\item
+  田大哲。泄泻治验{[}J{]}。河北中医，2005(03):176。
+\item
+  田大哲。挑治法治疗``翻欺''证1例{[}J{]}。河北中医，2004(06):414。
+\end{enumerate}
+
+以下是在下自学的笔记。课本是《黄帝内经针灸学》。
+
+笔记内容是按该书的目录排版。
+
+\chapter{自序}\label{ux81eaux5e8f}
+
+中医典籍有四大经典，分别是《黄帝内经》、《难经》、《神农本草经》、《伤寒杂病论》。《黄帝内经》乃中医四大经典之首。
+
+《黄帝内经》分为《灵枢》和《素问》2 部分，共 15 万字经文。《灵枢》是黄帝内经针灸学诊疗体系与针法体系的主体，《素问》则是对其基础理论的阐述与充实。两者主要文体形式是「师徒问对」，是未经整理过的课堂笔记，属于先秦古文``语录体'' 范畴。
+
+田大哲解构《黄帝内经》成为《黄帝内经针灸学》一书。
+
+什么是解构一部书籍？就是把它全部章节先行分拆，再行重构，并在重构中，展现文本原有的意义、内涵与逻辑。这就要找到了书眼。
+
+为什么要解构《黄帝内经》？《黄帝内经》展现的章节凌乱，针灸治疗过程环节条理难辨，这些环节包含诊断、治疗、针法操作等。
+
+《黄帝内经》的书眼就是``虚实''。``阴阳''界定事物的本质，``虚实''分辨``阴阳''的状态，``虚实''是阴阳失衡之内在结果，``寒热''表达的阴阳的偏倾现象，``表里''体现的是阴阳的相对位置，针法的主要作用是补虚写实，故要``先别阴阳''之下的虚实。《黄帝内经》主张的针灸治病的意义，在于从根本上解决一个人的``虚实状态''，其所关注的重点是``证型''，而非单纯地去改变一个人的具体``症候''。于是，``虚实''也便自然而然地成了整部《黄帝内经》的书眼。
+
+治疗疾病时，要分辨经脉病、藏府病、杂病等。这里举的例子，，假设只是藏府病，所以先辨病处的阴阳，即「藏病」还是「府病」，而后再辨其「盛」、「虚」。无论是「藏病」还是「府病」，其常证皆有四种，即阴虚、阴盛、阳虚、阳盛。
+
+以下会以肾病为例。但首先介绍一些概念。这些概念会在以后第二章的「输穴」说明。
+
+为了方便理解阴阳经脉的特性，把十二经脉中，相对多气的阳经称为``阳经''，相对多血的阴经称为``阴脉''。
+
+在古圣心目中最关键的输穴，当属「本输」，它们是肘膝而下与五藏六府内外交通能量的根源。阴脉的，统称为五输，即井、荥、输、经、合。阳经的，统称为六输，即井、荥、输、原、经、合。
+
+本输之中，又以「原」为首要，包括阴脉五输之「输」（以「输」为「原」）与阳经六输之「原」。
+
+basis：
+
+《灵枢经·邪气藏府病形 27 - 30》：
+
+\begin{quote}
+黄帝曰：荥俞与合，各有名乎？歧伯答曰：荥俞治外经，合治内府。
+\end{quote}
+
+\begin{quote}
+黄帝曰：治内府奈何？歧伯曰：取之于合。
+\end{quote}
+
+\begin{quote}
+黄帝曰：合各有名乎？歧伯答曰：胃合于三里，大肠合入于巨虚上廉，小肠合入于巨虚下廉，三焦合入于委阳，膀胱合入于委中央，胆合入于阳陵泉。
+\end{quote}
+
+\begin{quote}
+黄帝曰：取之奈何？歧伯答曰：取之三里者，低跗取之；巨虚者，举足取之；委阳者，屈伸而索之；委中者，屈而取之；阳陵泉者，正竖膝予之齐下，至委阳之阳取之；取诸外经者，揄申而从之。
+\end{quote}
+
+《灵枢经·寿夭刚柔 1 - 2》：
+
+\begin{quote}
+黄帝问于少师曰：余闻人之生也，有刚有柔，有弱有强，有短有长，有阴有阳，愿闻其方。
+\end{quote}
+
+\begin{quote}
+少师答曰：阴中有阴，阳中有阳，审知阴阳，刺之有方。得病所始，刺之有理。谨度病端，与时相应。内合于五藏六府，外合于筋骨皮肤。是故内有阴阳，外亦有阴阳。在内者，五藏为阴，六府为阳，在外者，筋骨为阴，皮肤为阳。故曰，病在阴之阴者，刺阴之荥俞，病在阳之阳者，刺阳之合，病在阳之阴者，刺阴之经，病在阴之阳者，刺络脉。···
+\end{quote}
+
+阴脉五输如下：
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lccccc@{}}
+\toprule\noalign{}
+& 井穴 & 荥穴 & 输穴 & 经穴 & 合穴 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+手太阴肺经 & 少商 & 鱼际 & 太渊 & 经渠 & 尺泽 \\
+足太阴脾经 & 隐白 & 大都 & 太白 & 商丘 & 阴陵泉 \\
+手少阴心经 & 少冲 & 少府 & 神门 & 灵道 & 少海 \\
+足少阴肾经 & 涌泉 & 然谷 & 太溪 & 复溜 & 阴谷 \\
+手厥阴心包经 & 中冲 & 劳宫 & 大陵 & 间使 & 曲泽 \\
+足厥阴肝经 & 大敦 & 行间 & 太冲 & 中封 & 曲泉 \\
+& & & & & \\
+\end{longtable}
+}
+
+阳经六输如下：
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lcccccc@{}}
+\toprule\noalign{}
+& 井穴 & 荥穴 & 输穴 & 原穴 & 经穴 & 合穴 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+手阳明大肠经 & 商阳 & 二间 & 三间 & 合谷 & 阳溪 & 曲池 \\
+足阳明胃经 & 厉兑 & 内庭 & 陷谷 & 冲阳 & 解溪 & 足三里 \\
+手太阳小肠经 & 少泽 & 前谷 & 后溪 & 腕骨 & 阳谷 & 小海 \\
+足太阳膀胱经 & 至阴 & 足通谷 & 束骨 & 京骨 & 昆仑 & 委中 \\
+手少阳三焦经 & 关冲 & 液门 & 中渚 & 阳池 & 支沟 & 天井 \\
+足少阳胆经 & 足窍阴 & 侠溪 & 足临泣 & 丘墟 & 阳辅 & 阳陵泉 \\
+\end{longtable}
+}
+
+以肾病为例，肾为藏，属阴，而其又分阴阳，又再分虚、盛，即肾阴虚、肾阴盛、肾阳虚、肾阳盛。
+
+肾阴（``病在阴（肾）之阴''）有盛虚，``病在阴之阴''，其治当取``阴之荣、输''，即肾之``荣、输''，即然谷、太溪，阴虚者补之，阴盛者泻之。
+
+肾阳（``病在阴（肾）之阳''）有盛虚，病在阴之阳，取本经脉之``井穴''涌泉，肾阳虚者补涌泉，肾阳盛者泻涌泉。除了刺涌泉补泻外，还可取相表里膀胱经之``原穴''京骨，或/及``经穴''昆仑，亦可以取肾输。肾阳虚者补之，肾阳盛者泻之。
+
+need to explain basis···
+
+至此，藏府证治法轨已然定形，而阳经设本输之要义亦彰明昭着，是为五藏之``阳输''，尤以``原''为要，其与五藏本输之``原''共同成了调治五藏阴阳之虚实偏的主要靶点，这是古圣``以五藏为中心''思想的具体表现。笔者别输穴之构想虽然肤浅，但能以此出人意料之完美结果收官，亦足可慰矣。由此而总结出的``藏府病证治法轨''，使五藏六府之疾的治疗皆具有了靶向性，其与``经脉病证治法轨''共同构建了黄帝内经针灸学证治的钢筋铁骨。证治法轨与补虚泻实针法契合自然，与诊断学亦保持了高度的自洽性，是知其当有大用。
+
+经历多次类似上述启迪而重构的黄帝内经针灸学，最终定稿为``概论''\,``诊断学''\,``治疗学''\,``针法''等四章。其中，概论部分为黄帝内经针灸学之核心思想总括;诊断学部分，辨证皆循辨阴阳虚实之法，经脉病需要辨阴阳之虚实，藏府病需要辨阴阳之虚实，杂病亦然，其辨虚实之法又皆以神、气、色、形分别辨之;治疗学部分，治疗皆循调阴阳盛虚之法，经脉病、藏府病、杂病等又皆统摄于治神、调气、调形三类之中，虚则补之，实则泻之，乱则调之;针法部分，包括治神针法、调气针法、调形针法，分而述之，是为《黄帝内经》辨证施治之决胜环节。
+
+\chapter{概论}\label{ux6982ux8bba}
+
+\section*{引言}\label{ux5f15ux8a00}
+\addcontentsline{toc}{section}{引言}
+
+诊疗是辨阴阳的盛虚、调阴阳之盛虚。针法是选任相应输穴而实现补虚实。
+
+在操针过程中遵循``盛者泻之，虚者补之，乱者调之''之法，令不平之气复归于平，是为《黄帝内经》之道。
+
+\section{道}\label{ux9053}
+
+\section{人体构架模型}\label{ux4ebaux4f53ux6784ux67b6ux6a21ux578b}
+
+\subsection{阴阳}\label{ux9634ux9633}
+
+\subsection{形气}\label{ux5f62ux6c14}
+
+\subsection{营卫}\label{ux8425ux536b}
+
+\subsection{藏府-经脉}\label{ux85cfux5e9c-ux7ecfux8109}
+
+\subsection{藏府}\label{ux85cfux5e9c}
+
+\subsection{经脉}\label{ux7ecfux8109}
+
+\subsection{输穴}\label{ux8f93ux7a74}
+
+\section{病因论}\label{ux75c5ux56e0ux8bba}
+
+\subsection{内因}\label{ux5185ux56e0}
+
+\subsection{外因}\label{ux5916ux56e0}
+
+\section{平人标准}\label{ux5e73ux4ebaux6807ux51c6}
+
+\subsection{脉象之``平''}\label{ux8109ux8c61ux4e4bux5e73}
+
+\subsection{气机之``平''}\label{ux6c14ux673aux4e4bux5e73}
+
+\subsection{形气之``平''}\label{ux5f62ux6c14ux4e4bux5e73}
+
+\subsection{神态之``平''}\label{ux795eux6001ux4e4bux5e73}
+
+\section{经脉病-藏府病证治法轨}\label{ux7ecfux8109ux75c5-ux85cfux5e9cux75c5ux8bc1ux6cbbux6cd5ux8f68}
+
+\subsection{病在经脉者}\label{ux75c5ux5728ux7ecfux8109ux8005}
+
+\subsection{病在藏府者}\label{ux75c5ux5728ux85cfux5e9cux8005}
+
+\subsection{小结}\label{ux5c0fux7ed3}
+
+\section{总结}\label{ux603bux7ed3}
+
+\chapter{诊断学}\label{ux8bcaux65adux5b66}
+
+\section*{引言}\label{ux5f15ux8a00-1}
+\addcontentsline{toc}{section}{引言}
+
+\section{望诊}\label{ux671bux8bca}
+
+\subsection{望诊四要}\label{ux671bux8bcaux56dbux8981}
+
+\subsection{望诊之法}\label{ux671bux8bcaux4e4bux6cd5}
+
+\section{切诊}\label{ux5207ux8bca}
+
+\subsection{切经脉}\label{ux5207ux7ecfux8109}
+
+\subsection{切体}\label{ux5207ux4f53}
+
+\chapter{治疗学}\label{ux6cbbux7597ux5b66}
+
+\section*{引言}\label{ux5f15ux8a00-2}
+\addcontentsline{toc}{section}{引言}
+
+\section{治神}\label{ux6cbbux795e}
+
+\subsection{以神治神}\label{ux4ee5ux795eux6cbbux795e}
+
+\subsection{以气全神}\label{ux4ee5ux6c14ux5168ux795e}
+
+\subsection{以形调神}\label{ux4ee5ux5f62ux8c03ux795e}
+
+\subsection{失眠、癫狂之诊疗}\label{ux5931ux7720ux766bux72c2ux4e4bux8bcaux7597}
+
+\section{调气}\label{ux8c03ux6c14}
+
+\subsection{去邪胜}\label{ux53bbux90aaux80dc}
+
+\subsection{调经脉}\label{ux8c03ux7ecfux8109}
+
+\subsection{调藏府}\label{ux8c03ux85cfux5e9c}
+
+\subsection{调杂病}\label{ux8c03ux6742ux75c5}
+
+\section{调形}\label{ux8c03ux5f62}
+
+\subsection{皮}\label{ux76ae}
+
+\subsection{肉}\label{ux8089}
+
+\subsection{筋}\label{ux7b4b}
+
+\subsection{骨}\label{ux9aa8}
+
+\subsection{血脉}\label{ux8840ux8109}
+
+\chapter{针法}\label{ux9488ux6cd5}
+
+\section*{引言}\label{ux5f15ux8a00-3}
+\addcontentsline{toc}{section}{引言}
+
+\section{九针概说}\label{ux4e5dux9488ux6982ux8bf4}
+
+\subsection{镵针}\label{ux9575ux9488}
+
+\subsection{员针}\label{ux5458ux9488}
+
+\subsection{鍉针}\label{ux9349ux9488}
+
+\subsection{锋}\label{ux950b}
+
+\subsection{铍针}\label{ux94cdux9488}
+
+\subsection{员利针}\label{ux5458ux5229ux9488}
+
+\subsection{毫针}\label{ux6bebux9488}
+
+\subsection{长针}\label{ux957fux9488}
+
+\subsection{大针}\label{ux5927ux9488}
+
+\section{针功基础}\label{ux9488ux529fux57faux7840}
+
+\subsection{持针之道}\label{ux6301ux9488ux4e4bux9053}
+
+\subsection{练针大法}\label{ux7ec3ux9488ux5927ux6cd5}
+
+\subsection{押手}\label{ux62bcux624b}
+
+\subsection{气与得气}\label{ux6c14ux4e0eux5f97ux6c14}
+
+\subsection{守神}\label{ux5b88ux795e}
+
+\subsection{针刺补泻概念}\label{ux9488ux523aux8865ux6cfbux6982ux5ff5}
+
+\subsection{针刺补泻时机}\label{ux9488ux523aux8865ux6cfbux65f6ux673a}
+
+\section{针法枢要}\label{ux9488ux6cd5ux67a2ux8981}
+
+\subsection{治神针法}\label{ux6cbbux795eux9488ux6cd5}
+
+\subsection{调气针法}\label{ux8c03ux6c14ux9488ux6cd5}
+
+\subsection{调形针法（五刺）}\label{ux8c03ux5f62ux9488ux6cd5ux4e94ux523a}
+
+\subsection{灸法概说}\label{ux7078ux6cd5ux6982ux8bf4}
+
+\chapter*{自跋}\label{ux81eaux8dcb}
+\addcontentsline{toc}{chapter}{自跋}
+
+\section*{学习经典行稳致远}\label{ux5b66ux4e60ux7ecfux5178ux884cux7a33ux81f4ux8fdc}
+\addcontentsline{toc}{section}{学习经典行稳致远}
+
+\bibliography{book.bib,packages.bib}
+
+\end{document}
